@@ -1,6 +1,5 @@
 <script>
     import { fade } from "svelte/transition";
-    import { inject } from '@vercel/analytics'
     
     let txt = 'Welcome to ';
     let visible = true;
