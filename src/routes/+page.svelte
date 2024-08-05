@@ -36,7 +36,7 @@
     </label>
 
     {#if visible}
-        <h1 transition:fade class="d-flex align-center">{txt} <span>{maintxt}</span></h1>
+        <h1 transition:fade class="d-flex align-center flex-wrap">{txt} <span>{maintxt}</span></h1>
     {/if}
 
     <div class="main-content d-flex align-stretch align-center flex-wrap">        
@@ -109,7 +109,6 @@
         -webkit-text-fill-color: transparent;
     }
     .main-content{
-        max-width: 1200px;
         width: 100%;
         margin: 0 auto;
         padding: 10px;
@@ -122,7 +121,29 @@
     .main-content > div{
         position: relative;
     }
-    .main-content > div:not(:last-child)::after{
+    button,input{
+        border: 0;
+        border-radius: 5px;
+        padding: 10px 15px;
+    }
+    
+    @media (max-width: 767px){
+        .main-content{
+            max-width: 400px;
+            padding: 0;
+        }
+    }
+    @media (min-width: 767px){
+        .main-content{
+            max-width: 650px;
+        }
+    }
+
+    @media(min-width: 991px){
+        .main-content{
+            max-width: 890px;
+        }
+        .main-content > div:not(:last-child)::after{
         content: '';
         position: absolute;
         top: 0;
@@ -130,10 +151,12 @@
         width: 2px;
         height: 214px;
         background: rgba(158, 153, 153, 0.521);
+        }
     }
-    button,input{
-        border: 0;
-        border-radius: 5px;
-        padding: 10px 15px;
+
+    @media (min-width: 1200px){
+        .main-content{
+            max-width: 1180px;
+        }
     }
 </style>
